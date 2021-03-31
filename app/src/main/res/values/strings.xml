@@ -7,7 +7,24 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_home">Accueil</string>
+    <string name="menu_history">Historique</string>
+    <string name="nav_bar_panne">Panne</string>
+
+    <string name="validate">Valider</string>
+
+    <string name="enter_pin">Entrer le code d\'administration</string>
+    <string name="wrong_pin">Code erroné</string>
+    <string name="no_module">Aucun module EV3 détecté</string>
+
+    <string name="quantity_want">Quantité attendu</string>
+    <string name="quantity_current">Quantité actuelles dans les bacs</string>
+    <string name="control_system">Contrôles du système</string>
+    <string name="sort_all">Trier toute la rampe</string>
+    <string name="trash">Poubelle</string>
+
+    <string name="last_result">Résultat du dernier tri</string>
+    
+    <string name="ramp_order">Entrer les couleurs de Lego dans l\'ordre croissant</string>
+    <string name="color_choice">Choisir la couleur</string>
 </resources>
