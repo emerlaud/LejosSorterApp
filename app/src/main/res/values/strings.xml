@@ -17,11 +17,11 @@
     <string name="wrong_pin">Code erroné</string>
     <string name="no_module">Aucun module EV3 détecté</string>
 
-    <string name="quantity_want">Quantité attendu</string>
-    <string name="quantity_current">Quantité actuelles dans les bacs</string>
+    <string name="quantity_want">Quantités attendues</string>
+    <string name="quantity_current">Quantités actuelles dans les bacs</string>
     <string name="control_system">Contrôles du système</string>
-    <string name="sort_all">Trier toute la rampe</string>
     <string name="trash">Poubelle</string>
+    <string name="breakdown">Panne</string>
 
     <string name="last_result">Résultat du dernier tri</string>
     
