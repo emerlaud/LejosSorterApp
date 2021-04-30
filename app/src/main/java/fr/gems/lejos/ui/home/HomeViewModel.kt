@@ -6,6 +6,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class HomeViewModel : ViewModel() {
+    //variables to stock the pin code for authentification
+    private var pin  : String = ""
+
     //define all the text fields
     private val _currentRed = MutableLiveData<Int>()
     val currentRed : LiveData<Int>
@@ -76,7 +79,13 @@ class HomeViewModel : ViewModel() {
         _quantityWaitGreen.value = (_quantityWaitGreen.value)?.minus(1)
     }
 
+    //define the method to check if the code is correct
+    fun authentification(tryPin: String): Boolean {
+        return tryPin == pin
+    }
+
     init {
+        pin = "0000"
         _quantityWaitRed.value = 0
         _quantityWaitYellow.value = 0
         _quantityWaitBlue.value = 0
