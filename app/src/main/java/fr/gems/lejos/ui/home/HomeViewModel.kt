@@ -88,5 +88,4 @@ class HomeViewModel : ViewModel() {
         _currentGreen.value = 0
     }
 
-
 }
