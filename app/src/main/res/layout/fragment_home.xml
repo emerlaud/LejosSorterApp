@@ -285,56 +285,56 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <Button
+                    <EditText
                         android:id="@+id/current_blue"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_marginStart="196dp"
-                        android:backgroundTint="#FFFFFF"
+                        android:background="@drawable/edittext_blue"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/current_green"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="1.0"
-                        app:strokeColor="#1B9AAA"
-                        app:strokeWidth="2dp" />
+                        android:textAlignment="center"/>
 
-                    <Button
+                    <EditText
                         android:id="@+id/current_green"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_marginEnd="8dp"
-                        android:backgroundTint="#FFFFFF"
+                        android:background="@drawable/edittext_green"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:strokeColor="#06D672"
-                        app:strokeWidth="2dp" />
+                        android:textAlignment="center"/>
 
-                    <Button
+                    <EditText
                         android:id="@+id/current_yellow"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:backgroundTint="#FFFFFF"
+                        android:background="@drawable/edittext_yellow"
                         app:layout_constraintBottom_toBottomOf="@id/current_red"
                         app:layout_constraintEnd_toStartOf="@+id/current_blue"
                         app:layout_constraintStart_toEndOf="@+id/current_red"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:strokeColor="#FFC43D"
-                        app:strokeWidth="2dp" />
+                        android:textAlignment="center"/>
 
-                    <Button
+                    <EditText
                         android:id="@+id/current_red"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_marginStart="8dp"
-                        android:backgroundTint="#FFFFFF"
+                        android:background="@drawable/edittext_red"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.0"
                         app:strokeColor="#B00020"
-                        app:strokeWidth="2dp" />
+                        app:strokeWidth="2dp"
+                        android:textAlignment="center"
+                        android:inputType="number"
+                        android:maxLength="4"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
