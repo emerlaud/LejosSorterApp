@@ -3,22 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@id/nav_home">
 
     <fragment
         android:id="@+id/nav_home"
         android:name="fr.gems.lejos.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_breakdownFragment"
+            app:destination="@id/breakdownFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_history"
         android:name="fr.gems.lejos.ui.history.HistoryFragment"
         android:label="@string/menu_history"
-        tools:layout="@layout/fragment_history">
-        <action
-            android:id="@+id/action_nav_history_self"
-            app:destination="@id/nav_history" />
-    </fragment>
+        tools:layout="@layout/fragment_history"/>
+    <fragment
+        android:id="@+id/breakdownFragment"
+        android:name="fr.gems.lejos.ui.breakdown.BreakdownFragment"
+        android:label="fragment_breakdown_list"
+        tools:layout="@layout/fragment_breakdown_list" />
 
 </navigation>

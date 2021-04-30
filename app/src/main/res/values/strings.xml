@@ -22,9 +22,11 @@
     <string name="control_system">Contrôles du système</string>
     <string name="trash">Poubelle</string>
     <string name="breakdown">Panne</string>
+    <string name="quantity_format">%d</string>
 
     <string name="last_result">Résultat du dernier tri</string>
     
     <string name="ramp_order">Entrer les couleurs de Lego dans l\'ordre croissant</string>
     <string name="color_choice">Choisir la couleur</string>
+
 </resources>
