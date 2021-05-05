@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 
 class HomeViewModel : ViewModel() {
     //variables to stock the pin code for authentification
-    private var pin  : String = ""
+    var pin  : String = ""
 
     //define all the text fields
     private val _currentRed = MutableLiveData<Int>()
