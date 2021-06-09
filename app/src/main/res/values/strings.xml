@@ -11,6 +11,7 @@
     <string name="menu_history">Historique</string>
     <string name="nav_bar_panne">Panne</string>
 
+    <string name="connect">Connection</string>
     <string name="validate">Valider</string>
 
     <string name="enter_pin">Entrer le code d\'administration</string>
@@ -25,9 +26,13 @@
     <string name="breakdown">Panne</string>
     <string name="quantity_format">%d</string>
 
+    <string name="mac_format">%s</string>
+
     <string name="last_result">Résultat du dernier tri</string>
-    
+
     <string name="ramp_order">Entrer les couleurs de Lego dans l\'ordre croissant</string>
     <string name="color_choice">Choisir la couleur</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

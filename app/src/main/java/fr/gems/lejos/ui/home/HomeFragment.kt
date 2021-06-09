@@ -53,7 +53,7 @@ class HomeFragment : Fragment() {
 //            Navigation.findNavController(view).navigate(R.id.action_nav_home_to_breakdownFragment)
 //        }
 
-        showDialog()
+//        showDialog()
 
         return homeBinding.root
     }

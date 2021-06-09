@@ -25,5 +25,9 @@
         android:name="fr.gems.lejos.ui.breakdown.BreakdownFragment"
         android:label="fragment_breakdown_list"
         tools:layout="@layout/fragment_breakdown_list" />
+    <fragment
+        android:id="@+id/nav_connect"
+        android:name="fr.gems.lejos.ui.connect.ConnectFragment"
+        android:label="ConnectFragment" />
 
 </navigation>
