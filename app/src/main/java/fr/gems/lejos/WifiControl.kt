@@ -16,15 +16,14 @@ class WifiControl {
 
     var `in`: BufferedReader? = null
     var out: BufferedWriter? = null
-    final val ip = "10.0.1.1"
-    fun ouvrir() {
-        listenThread = listenExecService.submit {
+    fun ouvrir(ip: String) {
+        listenThread = listenExecService.submit { Runnable() {
             val port = 80
             try {
                 socket = Socket(ip, port)
                 `in` = BufferedReader(InputStreamReader(socket!!.getInputStream()))
                 out = BufferedWriter(OutputStreamWriter(socket!!.getOutputStream()))
-                println(String.format("Connecté sur %s, port %d", ip, port))
+                println(java.lang.String.format("Connecté sur %s, port %d", ip, port))
                 while (!socket!!.isClosed) {
                     var s: String? = ""
                     println("Attente d'un message...")
@@ -34,6 +33,8 @@ class WifiControl {
             } catch (e: IOException) {
                 e.printStackTrace()
             }
+        }
+
         }
     }
 

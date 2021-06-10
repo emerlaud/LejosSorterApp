@@ -314,6 +314,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:background="@drawable/edittext_yellow"
+                        android:text=""
                         app:layout_constraintBottom_toBottomOf="@id/current_red"
                         app:layout_constraintEnd_toStartOf="@+id/current_blue"
                         app:layout_constraintStart_toEndOf="@+id/current_red"

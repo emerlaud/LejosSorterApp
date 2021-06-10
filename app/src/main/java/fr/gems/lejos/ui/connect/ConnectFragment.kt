@@ -1,20 +1,23 @@
 package fr.gems.lejos.ui.connect
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.ViewModelProvider
 import fr.gems.lejos.R
-import fr.gems.lejos.databinding.FragmentConnectBinding
-import fr.gems.lejos.ui.history.HistoryViewModel
 
 class ConnectFragment : Fragment() {
 
+
     private lateinit var connectViewModel: ConnectViewModel
-    private lateinit var connectBinding: FragmentConnectBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,28 +26,28 @@ class ConnectFragment : Fragment() {
         connectViewModel =
             ViewModelProvider(this).get(ConnectViewModel::class.java)
 
-        connectBinding = DataBindingUtil.inflate(
-            inflater,
-            R.layout.fragment_connect,
-            container,
-            false
-        )
+        val view = inflater.inflate(R.layout.fragment_connect, container, false)
 
-        connectBinding.connectViewmodel = connectViewModel
-        connectBinding.lifecycleOwner = this
+        val ipField : EditText = view.findViewById(R.id.editIP)
+        ipField.doOnTextChanged { text, _, _, _ ->
+            connectViewModel.updateIp(text.toString())
+        }
+        connectViewModel.updateIp(ipField.text.toString())
 
-        connectViewModel.initWifi()
 
-        return connectBinding.root
-    }
+        val sendMsg : Button = view.findViewById(R.id.sendMsg)
+        sendMsg.setOnClickListener {
+            connectViewModel.sendMsgWifi()
+            Toast.makeText(activity,"Message envoyé", Toast.LENGTH_SHORT).show()
+        }
 
-    override fun onPause() {
-        super.onPause()
-        connectViewModel.closeWifi()
-    }
-    override fun onDestroy() {
-        super.onDestroy()
-        connectViewModel.closeWifi()
+        val validateIP : Button = view.findViewById(R.id.validate_code_button)
+        validateIP.setOnClickListener {
+            connectViewModel.initWifi()
+            Toast.makeText(activity,"Connexion établie", Toast.LENGTH_SHORT).show()
+        }
+
+        return view
     }
 
 }

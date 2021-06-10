@@ -4,24 +4,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-        <variable
-            name="connectViewmodel"
-            type="fr.gems.lejos.ui.connect.ConnectViewModel" />
-
-    </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <EditText
+            android:id="@+id/editIP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:hint="@string/code"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <Button
-            android:id="@+id/debug"
+            android:id="@+id/sendMsg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/white"
-            android:onClick="@{()-> connectViewmodel.sendMsgWifi()}"
-            android:text="send msg"
+            android:text="Send msg"
             android:textColor="@color/mainPurple"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/validate_code_button"
@@ -35,8 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/white"
-            android:onClick="@{()-> connectViewmodel.closeWifi()}"
-            android:text="feremer connexion"
+            android:text="Validate ip"
             android:textColor="@color/mainPurple"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

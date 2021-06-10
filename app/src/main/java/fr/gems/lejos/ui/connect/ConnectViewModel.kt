@@ -13,10 +13,17 @@ class ConnectViewModel : ViewModel() {
     private  var BT_Comm : BTControl = BTControl()
     private var wifiControl : WifiControl = WifiControl()
 
+
+    var ip = ""
     val TAG = "ConnectViewmodel"
 
     private val macTest = "00:16:53:81:87:DD"
-    private val msgTest = "0"
+    private val msgTest = "{\"action\": \"connect\", \"KEYCODE\": \"0000\"}"
+
+    fun updateIp(value : String){
+        ip = value
+        Log.d(TAG, "ip = $ip")
+    }
 
     fun initBT(){
         BT_Comm.initBT()
@@ -40,7 +47,7 @@ class ConnectViewModel : ViewModel() {
 
 
     fun initWifi(){
-        wifiControl.ouvrir()
+        wifiControl.ouvrir(ip)
         Log.d(TAG,"connexion ouverte")
     }
 
