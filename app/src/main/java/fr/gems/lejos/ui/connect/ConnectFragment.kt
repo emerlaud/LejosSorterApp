@@ -35,15 +35,9 @@ class ConnectFragment : Fragment() {
         connectViewModel.updateIp(ipField.text.toString())
 
 
-        val sendMsg : Button = view.findViewById(R.id.sendMsg)
-        sendMsg.setOnClickListener {
-            connectViewModel.sendMsgWifi()
-            Toast.makeText(activity,"Message envoyé", Toast.LENGTH_SHORT).show()
-        }
-
         val validateIP : Button = view.findViewById(R.id.validate_code_button)
         validateIP.setOnClickListener {
-            connectViewModel.initWifi()
+            connectViewModel.initWifi(connectViewModel.ip, connectViewModel.port.toString())
             Toast.makeText(activity,"Connexion établie", Toast.LENGTH_SHORT).show()
         }
 

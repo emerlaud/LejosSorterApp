@@ -13,36 +13,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
-            android:hint="@string/code"
+            android:hint="@string/ip"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/sendMsg"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/editPort"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
-            android:text="Send msg"
-            android:textColor="@color/mainPurple"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/validate_code_button"
-            app:layout_constraintHorizontal_bias="0.0"
+            android:hint="@string/port"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:strokeColor="@color/mainPurple" />
+            app:layout_constraintTop_toBottomOf="@+id/editIP" />
 
         <Button
             android:id="@+id/validate_code_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/white"
-            android:text="Validate ip"
+            android:text="@string/connexion"
             android:textColor="@color/mainPurple"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editPort"
             app:strokeColor="@color/mainPurple" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

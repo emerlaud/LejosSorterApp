@@ -24,15 +24,17 @@
     <string name="control_system">Contrôles du système</string>
     <string name="trash">Poubelle</string>
     <string name="breakdown">Panne</string>
-    <string name="quantity_format">%d</string>
 
+    <string name="quantity_format">%d</string>
     <string name="mac_format">%s</string>
 
     <string name="last_result">Résultat du dernier tri</string>
 
     <string name="ramp_order">Entrer les couleurs de Lego dans l\'ordre croissant</string>
     <string name="color_choice">Choisir la couleur</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="connexion">Connexion</string>
+    <string name="ip">Adresse IP de l\'EV3</string>
+    <string name="port">Numéro de port</string>
 
 </resources>

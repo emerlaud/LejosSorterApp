@@ -1,5 +1,6 @@
 package fr.gems.lejos
 
+import android.util.Log
 import java.io.*
 import java.net.Socket
 import java.util.concurrent.ExecutorService
@@ -8,6 +9,7 @@ import java.util.concurrent.Future
 
 class WifiControl {
     var socket: Socket? = null
+    val TAG = "WifiControl"
 
     private lateinit var listenThread: Future<*>
     private lateinit  var sendThread: Future<*>
@@ -16,20 +18,19 @@ class WifiControl {
 
     var `in`: BufferedReader? = null
     var out: BufferedWriter? = null
-    fun ouvrir(ip: String) {
+    fun open(ip: String, port : String) {
         listenThread = listenExecService.submit { Runnable() {
-            val port = 80
             try {
-                socket = Socket(ip, port)
+                socket = Socket(ip, port.toInt())
                 `in` = BufferedReader(InputStreamReader(socket!!.getInputStream()))
                 out = BufferedWriter(OutputStreamWriter(socket!!.getOutputStream()))
-                println(java.lang.String.format("Connecté sur %s, port %d", ip, port))
+                Log.d(TAG,java.lang.String.format("Connect on %s, port %d", ip, port))
                 while (!socket!!.isClosed) {
                     var s: String? = ""
-                    println("Attente d'un message...")
-                    if (`in`!!.readLine().also { s = it } != null) println(String.format("Message reçu : %s", s)) else socket!!.close()
+                    Log.d(TAG, "Waiting for msg...")
+                    if (`in`!!.readLine().also { s = it } != null) Log.d(TAG, String.format("Msg receive : %s", s)) else socket!!.close()
                 }
-                println("Socket fermé")
+                Log.d(TAG, "Socket closed")
             } catch (e: IOException) {
                 e.printStackTrace()
             }
@@ -38,7 +39,7 @@ class WifiControl {
         }
     }
 
-    fun fermer() {
+    fun close() {
         try {
             if (!socket!!.isClosed) socket!!.close()
         } catch (e: IOException) {
@@ -46,14 +47,14 @@ class WifiControl {
         }
     }
 
-    fun envoyerMessage(message: String?) {
+    fun sendMsg(message: String?) {
         sendThread = sendExecService.submit {
             try {
-                println(String.format("Message envoyé : %s", message))
+                Log.d(TAG, String.format("Message send : %s", message))
                 out!!.write(String.format("%s\n", message))
                 out!!.flush()
             } catch (e: Exception) {
-                println(String.format("Impossible d'envoyer un message : %s", e.message))
+                Log.d(TAG, String.format("Impossible to send message : %s", e.message))
             }
         }
     }
