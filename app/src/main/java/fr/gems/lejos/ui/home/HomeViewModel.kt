@@ -84,8 +84,12 @@ class HomeViewModel : ViewModel() {
         return tryPin == pin
     }
 
+    fun sendQuantity(){
+
+    }
+
     init {
-        pin = "0000"
+
         _quantityWaitRed.value = 0
         _quantityWaitYellow.value = 0
         _quantityWaitBlue.value = 0

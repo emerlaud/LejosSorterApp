@@ -34,12 +34,19 @@ class ConnectFragment : Fragment() {
         }
         connectViewModel.updateIp(ipField.text.toString())
 
+        val portField : EditText = view.findViewById(R.id.editPort)
+        portField.doOnTextChanged{ text, _, _, _ ->
+            connectViewModel.updatePort(text.toString().toInt())
+        }
+
 
         val validateIP : Button = view.findViewById(R.id.validate_code_button)
         validateIP.setOnClickListener {
             connectViewModel.initWifi(connectViewModel.ip, connectViewModel.port.toString())
             Toast.makeText(activity,"Connexion établie", Toast.LENGTH_SHORT).show()
+
         }
+
 
         return view
     }

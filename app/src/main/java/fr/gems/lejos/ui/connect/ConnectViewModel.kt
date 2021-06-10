@@ -21,6 +21,11 @@ class ConnectViewModel : ViewModel() {
         Log.d(TAG, "ip = $ip")
     }
 
+    fun updatePort(value : Int){
+        port = value
+        Log.d(TAG, "ip = $ip")
+    }
+
     fun initWifi(ip : String, port : String){
         wifiControl.open(ip, port)
         Log.d(TAG,"connexion open")
