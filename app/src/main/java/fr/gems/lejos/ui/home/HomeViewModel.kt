@@ -50,13 +50,13 @@ class HomeViewModel : ViewModel() {
     //define the method to increase and decrease quantities wanted
     fun increaseRedWant() {
         _quantityWaitRed.value =(_quantityWaitRed.value)?.plus(1)
-        Log.d("test button","add red, quantity = ${_quantityWaitRed.value}")
+        Log.d(TAG,"add red, quantity = ${_quantityWaitRed.value}")
 
     }
 
     fun decreaseRedWant(){
         _quantityWaitRed.value = (_quantityWaitRed.value)?.minus(1)
-        Log.d("test button", "rm red, quantity = ${_quantityWaitRed.value}")
+        Log.d(TAG, "rm red, quantity = ${_quantityWaitRed.value}")
 
     }
 
@@ -82,11 +82,6 @@ class HomeViewModel : ViewModel() {
 
     fun decreaseGreenWant(){
         _quantityWaitGreen.value = (_quantityWaitGreen.value)?.minus(1)
-    }
-
-    //define the method to check if the code is correct
-    fun authentification(tryPin: String): Boolean {
-        return tryPin == pin
     }
 
     fun sendQuantity(){

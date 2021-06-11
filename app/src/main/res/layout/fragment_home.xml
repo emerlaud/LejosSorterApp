@@ -382,6 +382,7 @@
 
                     <ImageButton
                         android:id="@+id/sort_all_button"
+                        android:onClick="@{()-> homeViewmodel.sortAll()}"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_marginStart="8dp"
@@ -412,6 +413,7 @@
 
                     <ImageButton
                         android:id="@+id/trash_button"
+                        android:onClick="@{()-> homeViewmodel.trash()}"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:adjustViewBounds="true"
