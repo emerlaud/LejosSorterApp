@@ -33,6 +33,7 @@
 
     <string name="ramp_order">Entrer les couleurs de Lego dans l\'ordre croissant</string>
     <string name="color_choice">Choisir la couleur</string>
+    <string name="nbLego">Nombre de pièces à trier</string>
 
     <string name="connexion">Connexion</string>
     <string name="ip">Adresse IP de l\'EV3</string>

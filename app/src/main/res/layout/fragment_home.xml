@@ -281,6 +281,22 @@
                     android:onClick="@{()-> homeViewmodel.sendQuantity()}"
                     android:text="@string/sendQuantity" />
 
+                <EditText
+                    android:id="@+id/xToSort"
+                    android:text="@{@string/quantity_format(homeViewmodel.quantity)}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint ="@string/nbLego"
+                     />
+
+                <Button
+                    android:id="@+id/sortX"
+                    android:onClick="@{() -> homeViewmodel.sendNbLego()}"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sendQuantity" />
+
                 <TextView
                     android:id="@+id/text_current_quantity"
                     android:layout_width="match_parent"

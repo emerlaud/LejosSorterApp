@@ -47,6 +47,10 @@ class HomeViewModel : ViewModel() {
     val quantityWaitGreen : LiveData<Int>
         get() = _quantityWaitGreen
 
+    private val _quantity = MutableLiveData<Int>()
+    val quantity : LiveData<Int>
+        get() = _quantity
+
     //define the method to increase and decrease quantities wanted
     fun increaseRedWant() {
         _quantityWaitRed.value =(_quantityWaitRed.value)?.plus(1)
@@ -105,8 +109,17 @@ class HomeViewModel : ViewModel() {
                 color = "Yellow"
             }
         }
-
         val msg = "{\"action\": \"sortXColoredBricks\", \"$number\": , \"color\": \"$color\"}"
+        wifiControl.sendMsg(msg)
+    }
+
+    fun sendNbLego(){
+        var number = 0
+        if (quantity.value!!>0){
+            number = quantity.value!!
+        }
+
+        val msg = "{\"action\": \"sortXColoredBricks\", \"number\": \"$number\" }"
         wifiControl.sendMsg(msg)
     }
 
@@ -121,18 +134,7 @@ class HomeViewModel : ViewModel() {
     }
     init {
 
-        _quantityWaitRed.value = 0
-        _quantityWaitYellow.value = 0
-        _quantityWaitBlue.value = 0
-        _quantityWaitGreen.value = 0
-
-        _currentRed.value = 0
-        _currentYellow.value = 0
-        _currentBlue.value = 0
-        _currentGreen.value = 0
-    }
-
-    init {
+        _quantity.value = 0
 
         _quantityWaitRed.value = 0
         _quantityWaitYellow.value = 0
