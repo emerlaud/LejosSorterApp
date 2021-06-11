@@ -40,4 +40,6 @@ class ConnectViewModel : ViewModel() {
         Log.d(TAG, "message send")
     }
 
+
+
 }

@@ -4,8 +4,13 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import fr.gems.lejos.WifiControl
 
 class HomeViewModel : ViewModel() {
+
+    var wifiControl : WifiControl = WifiControl()
+    val TAG = "HomeViewModel"
+
     //variables to stock the pin code for authentification
     var pin  : String = ""
 
@@ -85,7 +90,51 @@ class HomeViewModel : ViewModel() {
     }
 
     fun sendQuantity(){
+        var number = 0
+        var color = ""
+        when {
+            quantityWaitBlue.value!! > 0 -> {
+                number = quantityWaitBlue.value!!
+                color = "Blue"
+            }
+            quantityWaitGreen.value!! > 0 -> {
+                number = quantityWaitGreen.value!!
+                color = "Green"
+            }
+            quantityWaitRed.value!! >0 -> {
+                number = quantityWaitRed.value!!
+                color = "Red"
+            }
+            quantityWaitYellow.value !! >0 -> {
+                number = quantityWaitYellow.value!!
+                color = "Yellow"
+            }
+        }
 
+        val msg = "{\"action\": \"sortXColoredBricks\", \"$number\": , \"color\": \"$color\"}"
+        wifiControl.sendMsg(msg)
+    }
+
+    fun trash(){
+        wifiControl.sendMsg("{\"action\": \"trash\"}")
+        Log.d(TAG,"trash")
+    }
+
+    fun sortAll(){
+        wifiControl.sendMsg("{\"action\": \"sortAll\"}")
+        Log.d(TAG, "sortAll")
+    }
+    init {
+
+        _quantityWaitRed.value = 0
+        _quantityWaitYellow.value = 0
+        _quantityWaitBlue.value = 0
+        _quantityWaitGreen.value = 0
+
+        _currentRed.value = 0
+        _currentYellow.value = 0
+        _currentBlue.value = 0
+        _currentGreen.value = 0
     }
 
     init {
